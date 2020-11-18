@@ -12,7 +12,7 @@ public class ProxyFactory {
         //（▲）类加载器
         ClassLoader loader = target.getClassLoader();
         //（▲）接口
-        Class<?>[] interfaces = new Class[]{GreetingService.class};
+        Class<?>[] interfaces = new Class[]{target};
         //（▲）
         InvocationHandler handler = new CustomInvocationHandler();
 
