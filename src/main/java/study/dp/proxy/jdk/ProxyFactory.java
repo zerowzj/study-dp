@@ -9,11 +9,11 @@ import java.lang.reflect.Proxy;
 public class ProxyFactory {
 
     public static <T> T create(Class<T> target) {
-        //类加载器
+        //（▲）类加载器
         ClassLoader loader = target.getClassLoader();
-        //接口
+        //（▲）接口
         Class<?>[] interfaces = new Class[]{GreetingService.class};
-        //
+        //（▲）
         InvocationHandler handler = new CustomInvocationHandler();
 
         return (T) Proxy.newProxyInstance(loader, interfaces, handler);

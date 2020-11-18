@@ -12,8 +12,11 @@ public class CustomInvocationHandler implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        //（▲）代理对象
         log.info("target= {}", proxy.getClass().getSimpleName());
+        //（▲）方法
         log.info("method= {}", method.getName());
+        //（▲）参数
         Arrays.stream(args).forEach(e -> {
             log.info("   arg= {}", e);
         });
