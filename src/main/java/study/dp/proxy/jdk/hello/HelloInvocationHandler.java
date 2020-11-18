@@ -9,6 +9,7 @@ import java.util.Arrays;
 @Slf4j
 public class HelloInvocationHandler implements InvocationHandler {
 
+    //delegate
     private Object target;
 
     public HelloInvocationHandler(Object target) {
@@ -18,7 +19,7 @@ public class HelloInvocationHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         //（▲）代理对象
-        log.info("proxy= {}", proxy.getClass().getName());
+        log.info(" proxy= {}", proxy.getClass().getName());
         //（▲）方法
         log.info("method= {}", method.getName());
         //（▲）参数
@@ -26,9 +27,10 @@ public class HelloInvocationHandler implements InvocationHandler {
             log.info("   arg= {}", e);
         });
 
-        log.info(">>>>>>");
+        log.info(">>>>>> before");
+        //JVM通过这条语句执行原来的方法(反射机制)
         Object retValue = method.invoke(target, args);
-        log.info(">>>>>>");
+        log.info(">>>>>> after");
         return retValue;
     }
 }

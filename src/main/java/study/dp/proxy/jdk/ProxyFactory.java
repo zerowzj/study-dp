@@ -14,7 +14,7 @@ public class ProxyFactory {
         ClassLoader loader = clazz.getClassLoader();
         //（▲）接口
         Class<?>[] interfaces = clazz.getInterfaces();
-        //
+        //（▲）
         InvocationHandler h = handler;
         //创建代理
         return (T) Proxy.newProxyInstance(loader, interfaces, h);
