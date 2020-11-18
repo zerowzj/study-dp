@@ -26,7 +26,9 @@ public class HelloInvocationHandler implements InvocationHandler {
             log.info("   arg= {}", e);
         });
 
+        log.info(">>>>>>");
         Object retValue = method.invoke(target, args);
+        log.info(">>>>>>");
         return retValue;
     }
 }

@@ -14,7 +14,6 @@ public class HelloTest {
     public void test() {
         HelloService target = new HelloServiceImpl();
         HelloService proxy = ProxyFactory.create(target, new HelloInvocationHandler(target));
-        String str = proxy.sayHi("wangzhj1111111");
-        log.info(str);
+        String str = proxy.sayHi("wangzhj");
     }
 }
