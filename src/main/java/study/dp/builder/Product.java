@@ -13,6 +13,7 @@ public class Product {
     public static class Builder {
 
         private String name;
+
         private String logo;
 
         public Builder name(String name) {
