@@ -1,4 +1,4 @@
-package study.dp.proxy.jdk;
+package study.dp.proxy.jdk.bye;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -8,12 +8,12 @@ import java.util.Arrays;
 import java.util.Objects;
 
 @Slf4j
-public class CustomInvocationHandler implements InvocationHandler {
+public class ByeByeInvocationHandler implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         //（▲）代理对象
-        log.info("proxy= {}", proxy.getClass().getSimpleName());
+        log.info("proxy= {}", proxy.getClass().getName());
         //（▲）方法
         log.info("method= {}", method.getName());
         //（▲）参数
