@@ -1,4 +1,12 @@
 package study.dp.builder;
 
-public interface Car {
+public class Car {
+
+    private String brand;
+
+    private String logo;
+
+    class Builder {
+
+    }
 }
